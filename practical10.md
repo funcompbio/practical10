@@ -131,7 +131,7 @@ name of this directory can be changed through the keyword `output_dir` in the
 a directory called `_site`).
 
 **Exercise**: using the GitHub repo you created in
-[practical 9](/practical9#publish-your-website-with-gitHub-pages)
+[practical 9](/practical9#publish-your-website-with-github-pages)
 by accepting the GitHub Classroom assignment called _Website assignment_,
 move your R Markdown documents and website to that repo and try to see it
 displayed through the GitHub Pages private URL from that GitHub repo. If
