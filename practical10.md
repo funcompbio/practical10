@@ -8,9 +8,8 @@ permalink: /practical10/
 
 The learning objectives for this practical are:
 
-  * Create HTML documents.
-  * Create Markdown documents.
   * Create R Markdown documents.
+  * Create R Markdown websites.
 
 # Setup and background
 
@@ -18,154 +17,123 @@ To do this practical you need an installation of R and RStudio. You can find
 the instructions in the [setup](/setup/) link on how to install R and RStudio
 in your system.
 
-# HTML documents
+# R Markdown documents
 
-The basic skeleton for an HTML document consists of:
-
-1. A [DOCTYPE](https://www.w3schools.com/tags/ref_html_dtd.asp) element
-that tells the web browser this is an HTML document:
-
-    ```
-    <!DOCTYPE html>
-    ```
-
-2. A [head](https://www.w3schools.com/tags/tag_head.asp) element, which contains
-metadata, enclosed in other HTML elements, about the whole document
-such as a title that is displayed in the browser tab displaying the HTML document.
-Another common metadata to be included here is the one associated with the `<style>` element.
-
-    ```
-    <head>
-      <title>Page Title</title>
-    </head>
-    ```
-
-3. A [body](https://www.w3schools.com/tags/tag_body.asp) element with the main content
-of the HTML document, which in this case consists of a heading and a paragraph.
-
-    ```
-    <body>
-      <h1>This is a first-level heading</h1>
-
-      <p>This is a paragraph.</p>
-    </body>
-    ```
-
-The elements in parts 2 and 3 of the skeleton are enclosed by starting `<html>` and ending
-`</html>` elements. The whole skeleton together looks as follows:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Page Title</title>
-</head>
-<body>
-  <h1>This is a first-level heading</h1>
-
-  <p>This is a paragraph.</p>
-</body>
-</html>
-```
-
-Copy and paste the previous code into a text file called `myfirstpage.html`,
-using a text editor for instance, and open it with the web browser (`File -> Open File ...`).
-
-The basic HTML elements are:
-
-* A text [headings](https://www.w3schools.com/tags/tag_hn.asp): `<h1>`, `<h2>`, ..., `<h5>`, `<h6>`.
-
-* A [paragraph](https://www.w3schools.com/tags/tag_p.asp): `<p>`.
-
-* An [unordered (bulleted) list](https://www.w3schools.com/tags/tag_ul.asp): `<ul>` and `<li>`.
-
-* An [ordered list](https://www.w3schools.com/tags/tag_ol.asp): `<ol>` and `<li>`.
-
-* A [hyperlink](https://www.w3schools.com/tags/tag_a.asp): `<a>` with the `href` attribute specifying the linked file or URL.
-
-* An [image](https://www.w3schools.com/tags/tag_img.asp): `<img>` with the `src` attribute specifying the path to the image file.
-
-* A [single line break](https://www.w3schools.com/tags/tag_br.asp): `<br>`.
-
-* An [horizontal ruler](https://www.w3schools.com/tags/tag_hr.asp): `<hr>`.
-
-Using some of these elements, edit the `myfirstpage.html` file and modify it to
-make a web page about your favorite (or unbeloved) music band. The page should
-include two sections, one with the origins of the band and its current members
-and another with its discography (shorten it to the most relevant one if its long).
-Add a picture of the band and a link to their official web page. Try to keep it
-under 30 lines. To display it in the web browser you need to (1) save the file in
-your text editor and (2) press the reload button in the tab from web browser
-where you loaded the page.
-
-## Styling with CSS
-
-You can alter the _style_ of HTML elements using so-called
-[CSS](https://en.wikipedia.org/wiki/CSS) declarations. There are different ways
-to include them, one of them is through the `<style>` element in the `<head>`
-section of the HTML document. For instance, edit your `myfirstpage.html` file
-and add the following CSS declaration within the `<head>` section:
-
-```
-<style>
-h1 {
-  font-family: arial;
-}
-</style>
-```
-Now reload the page and you should see how the text associated with the first-level
-heading `<h1>` elements has changed its font. Consult the following
-[link](https://www.w3schools.com/css/default.asp) and change in the file
-`myfirstpage.html` the default black color of the first-level heading `<h1>` element
-into another one.
-
-# Markdown
-
-We will learn Markdown as follows. In one tab of your browser open the
-[CommonMark reference page](https://commonmark.org/help). In another tab
-follow the 10-minute [CommonMark tutorial](https://commonmark.org/help/tutorial).
-
-Once you are finished with the tutorial, create a Markdown version of your previous
-file `myfirstpage.html`, i.e., a `myfirstpage.md` file, with all the previous content
-but formatted using Markdown only. You can create and process Markdown files from
-RStudio with the option `File -> New File -> Markdown File`. To process and visualize
-the file click on the `Preview` button of the source code editor.
-
-As an alternative to RStudio as Markdown editor, you can download and install the
-Markdown editor and reader [typora](https://typora.io).
-
-# R Markdown
-
-Go to RStudio and create a new R Markdown file by doing `File -> New File -> R Markdown ...`
-with the default option for output format (HTML). Give the text `COVID19 Analysis` as title.
-You will get a sample R Markdown file, press the `knit` button on top of the source code
-panel (see image below with a red arrow pointing to that button).
+Go to RStudio and create a new R Markdown file by doing
+`File -> New File -> R Markdown ...` with the default option for output format
+(HTML). Give the text `COVID19 Analysis` as title. You will get a sample R
+Markdown file, press the `knit` button on top of the source code panel (see
+image below with a red arrow pointing to that button).
 
 ![](rstudioknitbutton.png)
 
-After processing the file, a popup window should appear displaying the HTML page of
-the R Markdown file. Now modify this file to contain the analysis of the COVID19 data
-from [practical 9](/practical 9/) or, alternatively, the analysis of the COVID19 data
-of the current assignment. The final R Markdown document should contain:
+After processing the file, a popup window should appear displaying the HTML
+page of the R Markdown file. Now modify this file to contain some part of
+the analysis of the COVID19 data from [practical 8](/practical8/). The final
+R Markdown document should contain:
 
-1. Some text explaining each different data processing steps.
+1. Some text explaining what the R code does.
 2. At least one figure.
 3. At least one table with the numerical results.
 
-In the following [link](https://rmarkdown.rstudio.com/lesson-1.html) you can find a
-comprehensive description of the R Markdown language. In the section
-[Tables](https://rmarkdown.rstudio.com/lesson-7.html) you can find a way to pretty
-print the table with numerical results. In this other
-[link](https://rmarkdown.rstudio.com/authoring_basics.html) you have a quick reference
-to the most commonly used R Markdown syntax. The `Help` menu of RStudio also has links
-to many resources including cheatsheets for R Markdown.
+Alternatively, if your prefer, you may practice with R Markdown by starting
+with the analysis of the data of your FCB project, but put just some R code
+to allow you having time to do the rest of this practical.
 
-# Epilogue
+Slides 7 to 11 from the
+[lecture](https://funcompbio.github.io/lecture9/#7) about reproducibility
+contain a succint summary of R Markdown, but the internet is plenty of
+materials to learn it. In particular, the website
+[https://rmarkdown.rstudio.com](https://rmarkdown.rstudio.com) contains
+well structured learning material and example, concretely, in this
+[link](https://rmarkdown.rstudio.com/lesson-1.html) you can find a
+more comprehensive description of the R Markdown language, in the section
+[Tables](https://rmarkdown.rstudio.com/lesson-7.html) you can find a way to
+pretty print the table with numerical results and in this other
+[link](https://rmarkdown.rstudio.com/authoring_basics.html) you have a quick
+reference to the most commonly used R Markdown syntax. The `Help` menu of
+RStudio also has links to many resources including cheatsheets for R Markdown.
 
-While not strictly required or necessary for FCB, you are now equipped to create your own
-public website. Because you are already working with a GitHub account, you can easily
-do it with [GitHub Pages](https://pages.github.com). A very well paced guide to use GitHub
-Pages is the one by [Jonathan McGlone](http://jmcglone.com/guides/github-pages). Another
-even easier option to publish HTML files in a public website is
-[Netlify Drop](https://app.netlify.com/drop), which can be handy if you need to quickly
-share a website.
+The action performed by the `knit` button in RStudio can be instructed from
+the R shell by typing the following:
+
+```
+> rmarkdown::render("filename.Rmd")
+```
+where **you should replace** `filename.Rmd` by the filename of the R Markdown
+document your are working on. The previous instruction assumes you have
+[set the working directory](https://funcompbio.github.io/seminar4/#13)
+of RStudio to the directory where the R Markdown file is located.
+
+Likewise, you can process the R Markdown document from the Unix shell command
+line with the following instruction:
+
+```
+$ Rscript -e "rmarkdown::render('filename.Rmd')"
+```
+
+# R Markdown websites
+
+The [rmarkdown package](https://rmarkdown.rstudio.com/docs) provides the
+possibility of building what the authors of that package call
+_Markdown websites_, which is web page displaying the contents of two or
+more R Markdown documents. To see how it works you need to follow the
+next steps:
+
+1. Have a main R Markdown document stored under the filename `index.Rmd`.
+2. Make a directory called `docs` within the directory where the R
+   Markdown file `index.Rmd` is.
+3. In the same directory where the R Markdown file `index.Rmd` is, create
+   a Markdown file called `about.md` with the following contents:
+   ```
+   ---
+   title: About this website
+   ---
+
+   This website was created by me
+   ```
+4. In the same directory where the R Markdown file `index.Rmd` is, create
+   a YAML text file called `_site.yml` with the following contents:
+   ```
+   name: "my-first-rmarkdown-website"
+   output_dir: "docs"
+   navbar:
+     title: "My first R Markdown Website"
+     left:
+       - text: "Home"
+         href: index.html
+       - text: "About"
+         href: about.html
+   output:
+     html_document:
+   ```
+5. Having the [working directory](https://funcompbio.github.io/seminar4/#13)
+   of RStudio pointing to the directory were you stored the previous files,
+   type the following instruction in the R shell:
+   ```
+   > rmarkdown::render_site()
+   ```
+   **alternatively**, you can also create the website from the Unix shell command
+   line by going into that directory and typing:
+   ```
+   $ Rscript -e "rmarkdown::render_site()"
+   ```
+6. Open the file `docs/index.html` in your web browser and you should see your
+   first _R Markdown website_.
+
+You may consult the help page of the function `render_site()` from the
+[rmarkdown package](https://rmarkdown.rstudio.com/docs) for further details on
+available parameters and how it works. Essentially, it looks up for the files
+`_site.yml` and `index.Rmd`, and every other `.Rmd`, `.md` or `.html` file, and
+process them to put them together as a website in the directory `docs` (the
+name of this directory can be changed through the keyword `output_dir` in the
+`_site.yml` file, omitting this keyword will result in creating the website in
+a directory called `_site`).
+
+**Exercise**: using the GitHub repo you created in
+[practical 9](/practical9#publish-your-website-with-gitHub-pages)
+by accepting the GitHub Classroom assignment called _Website assignment_,
+move your R Markdown documents and website to that repo and try to see it
+displayed through the GitHub Pages private URL from that GitHub repo. If
+you want to keep the contents you had in the `index.Rmd` from that repo,
+rename that file to some other name.
