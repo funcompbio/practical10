@@ -5,18 +5,20 @@
 <li>Create R Markdown websites.</li>
 </ul>
 <h1 id="setup-and-background">Setup and background</h1>
-<p>To do this practical you need an installation of R and RStudio. You can find the instructions in the <a href="/setup/">setup</a> link on how to install R and RStudio in your system.</p>
+<p>To do this practical you need an installation of R and RStudio. You can find the instructions in the <a href="/setup/">setup</a> link on how to install R and RStudio in your system. Make a directory called <code>practical10</code> for this practical.</p>
 <h1 id="r-markdown-documents">R Markdown documents</h1>
-<p>Go to RStudio and create a new R Markdown file by doing <code>File -&gt; New File -&gt; R Markdown ...</code> with the default option for output format (HTML). Give the text <code>COVID19 Analysis</code> as title. You will get a sample R Markdown file, press the <code>knit</code> button on top of the source code panel (see image below with a red arrow pointing to that button).</p>
+<p>Start RStudio and create a new R Markdown file by doing <code>File -&gt; New File -&gt; R Markdown ...</code> with the default option for output format (HTML). Give the text <code>COVID19 Analysis</code> as title. You will get a sample R Markdown file, save it under the name <code>index.Rmd</code> in the <code>practical10</code> directory you previously created, by using the menu option <code>File -&gt; Save</code>. <a href="https://funcompbio.github.io/seminar4/#13">Set the working directory</a> to the <code>practical10</code> directory where you have saved this R Markdown document under the name <code>index.Rmd</code>.</p>
+<p>Now, we are going to process the <code>index.Rmd</code> file to obtain its corresponding HTML output (<code>index.html</code>) by pressing the <code>knit</code> button on top of the source code panel (see image below with a red arrow pointing to that button).</p>
 <p><img src="rstudioknitbutton.png" /></p>
-<p>After processing the file, a popup window should appear displaying the HTML page of the R Markdown file. Now modify this file to contain some part of the analysis of the COVID19 data from <a href="/practical8/">practical 8</a>. The final R Markdown document should contain:</p>
+<p>After processing the file, a popup window should appear displaying the HTML page of the R Markdown file.</p>
+<p><strong>Exercise:</strong> Modify this <code>index.Rmd</code> file to contain some part of the analysis of the COVID19 data from <a href="/practical8/">practical 8</a>. The final R Markdown document should contain:</p>
 <ol type="1">
 <li>Some text explaining what the R code does.</li>
 <li>At least one figure.</li>
 <li>At least one table with the numerical results.</li>
 </ol>
 <p>Alternatively, if your prefer, you may practice with R Markdown by starting with the analysis of the data of your FCB project, but put just some R code to allow you having time to do the rest of this practical.</p>
-<p>Slides 7 to 11 from the <a href="https://funcompbio.github.io/lecture9/#7">lecture</a> about reproducibility contain a succint summary of R Markdown, but the internet is plenty of materials to learn it. In particular, the website <a href="https://rmarkdown.rstudio.com">https://rmarkdown.rstudio.com</a> contains well structured learning material and example, concretely, in this <a href="https://rmarkdown.rstudio.com/lesson-1.html">link</a> you can find a more comprehensive description of the R Markdown language, in the section <a href="https://rmarkdown.rstudio.com/lesson-7.html">Tables</a> you can find a way to pretty print the table with numerical results and in this other <a href="https://rmarkdown.rstudio.com/authoring_basics.html">link</a> you have a quick reference to the most commonly used R Markdown syntax. The <code>Help</code> menu of RStudio also has links to many resources including cheatsheets for R Markdown.</p>
+<p>Slides 7 to 11 from the <a href="https://funcompbio.github.io/lecture9/#7">lecture</a> about reproducibility contain a succint summary of R Markdown, but the internet is plenty of materials to learn it. In particular, the website <a href="https://rmarkdown.rstudio.com">https://rmarkdown.rstudio.com</a> contains well structured learning material and example, concretely, in this <a href="https://rmarkdown.rstudio.com/lesson-1.html">link</a> you can find a more comprehensive description of the R Markdown language, in the section <a href="https://rmarkdown.rstudio.com/lesson-7.html">Tables</a> you can find a way to pretty print the table with numerical results and in this other <a href="https://rmarkdown.rstudio.com/authoring_basics.html">link</a> you have a quick reference to the most commonly used R Markdown syntax. The <code>Help</code> menu of RStudio also has links to many resources including <a href="https://en.wikipedia.org/wiki/Cheat_sheet">cheat sheets</a> for R Markdown.</p>
 <p>The action performed by the <code>knit</code> button in RStudio can be instructed from the R shell by typing the following:</p>
 <pre><code>&gt; rmarkdown::render(&quot;filename.Rmd&quot;)</code></pre>
 <p>where <strong>you should replace</strong> <code>filename.Rmd</code> by the filename of the R Markdown document your are working on. The previous instruction assumes you have <a href="https://funcompbio.github.io/seminar4/#13">set the working directory</a> of RStudio to the directory where the R Markdown file is located.</p>
@@ -25,8 +27,8 @@
 <h1 id="r-markdown-websites">R Markdown websites</h1>
 <p>The <a href="https://rmarkdown.rstudio.com/docs">rmarkdown package</a> provides the possibility of building what the authors of that package call <em>Markdown websites</em>, which is web page displaying the contents of two or more R Markdown documents. To see how it works you need to follow the next steps:</p>
 <ol type="1">
-<li><p>Have a main R Markdown document stored under the filename <code>index.Rmd</code>.</p></li>
-<li><p>Make a directory called <code>docs</code> within the directory where the R Markdown file <code>index.Rmd</code> is.</p></li>
+<li>Have a main R Markdown document stored under the filename <code>index.Rmd</code>.</li>
+<li>Make a directory called <code>docs</code> within the directory where the R Markdown file <code>index.Rmd</code> is.</li>
 <li><p>In the same directory where the R Markdown file <code>index.Rmd</code> is, create a Markdown file called <code>about.md</code> with the following contents:</p>
 <pre><code>---
 title: About this website
@@ -52,4 +54,4 @@ output:
 <li><p>Open the file <code>docs/index.html</code> in your web browser and you should see your first <em>R Markdown website</em>.</p></li>
 </ol>
 <p>You may consult the help page of the function <code>render_site()</code> from the <a href="https://rmarkdown.rstudio.com/docs">rmarkdown package</a> for further details on available parameters and how it works. Essentially, it looks up for the files <code>_site.yml</code> and <code>index.Rmd</code>, and every other <code>.Rmd</code>, <code>.md</code> or <code>.html</code> file, and process them to put them together as a website in the directory <code>docs</code> (the name of this directory can be changed through the keyword <code>output_dir</code> in the <code>_site.yml</code> file, omitting this keyword will result in creating the website in a directory called <code>_site</code>).</p>
-<p><strong>Exercise</strong>: using the GitHub repo you created in <a href="/practical9#publish-your-website-with-github-pages">practical 9</a> by accepting the GitHub Classroom assignment called <em>Website assignment</em>, move your R Markdown documents and website to that repo and try to see it displayed through the GitHub Pages private URL from that GitHub repo. If you want to keep the contents you had in the <code>index.Rmd</code> from that repo, rename that file to some other name.</p>
+<p><strong>Exercise</strong>: using the GitHub repo you created in <a href="/practical9#publish-your-website-with-github-pages">practical 9</a> by accepting the GitHub Classroom assignment called <em>Website assignment</em>, move your R Markdown documents and website to that repo and try to see it displayed through the GitHub Pages private URL from that GitHub repo. If you want to keep the contents you had in the <code>index.html</code> from that repo, rename that file to some other name.</p>
