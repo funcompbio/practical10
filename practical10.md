@@ -15,22 +15,32 @@ The learning objectives for this practical are:
 
 To do this practical you need an installation of R and RStudio. You can find
 the instructions in the [setup](/setup/) link on how to install R and RStudio
-in your system.
+in your system. Make a directory called `practical10` for this practical.
 
 # R Markdown documents
 
-Go to RStudio and create a new R Markdown file by doing
+Start RStudio and create a new R Markdown file by doing
 `File -> New File -> R Markdown ...` with the default option for output format
 (HTML). Give the text `COVID19 Analysis` as title. You will get a sample R
-Markdown file, press the `knit` button on top of the source code panel (see
-image below with a red arrow pointing to that button).
+Markdown file, save it under the name `index.Rmd` in the `practical10` directory
+you previously created, by using the menu option `File -> Save`.
+[Set the working directory](https://funcompbio.github.io/seminar4/#13) to the
+`practical10` directory where you have saved this R Markdown document under the
+name `index.Rmd`.
+
+Now, we are going to process the `index.Rmd` file to obtain its corresponding
+HTML output (`index.html`) by pressing the `knit` button on top of the source
+code panel (see image below with a red arrow pointing to that button).
 
 ![](rstudioknitbutton.png)
 
 After processing the file, a popup window should appear displaying the HTML
-page of the R Markdown file. Now modify this file to contain some part of
-the analysis of the COVID19 data from [practical 8](/practical8/). The final
-R Markdown document should contain:
+page of the R Markdown file.
+
+
+**Exercise:** Modify this `index.Rmd` file to contain some part of the analysis
+of the COVID19 data from [practical 8](/practical8/). The final R Markdown
+document should contain:
 
 1. Some text explaining what the R code does.
 2. At least one figure.
@@ -52,7 +62,8 @@ more comprehensive description of the R Markdown language, in the section
 pretty print the table with numerical results and in this other
 [link](https://rmarkdown.rstudio.com/authoring_basics.html) you have a quick
 reference to the most commonly used R Markdown syntax. The `Help` menu of
-RStudio also has links to many resources including cheatsheets for R Markdown.
+RStudio also has links to many resources including
+[cheat sheets](https://en.wikipedia.org/wiki/Cheat_sheet) for R Markdown.
 
 The action performed by the `knit` button in RStudio can be instructed from
 the R shell by typing the following:
@@ -135,5 +146,5 @@ a directory called `_site`).
 by accepting the GitHub Classroom assignment called _Website assignment_,
 move your R Markdown documents and website to that repo and try to see it
 displayed through the GitHub Pages private URL from that GitHub repo. If
-you want to keep the contents you had in the `index.Rmd` from that repo,
+you want to keep the contents you had in the `index.html` from that repo,
 rename that file to some other name.
