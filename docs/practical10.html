@@ -7,7 +7,7 @@
 <h1 id="setup-and-background">Setup and background</h1>
 <p>To do this practical you need an installation of R and RStudio. You can find the instructions in the <a href="/setup/">setup</a> link on how to install R and RStudio in your system. Make a directory called <code>practical10</code> for this practical.</p>
 <h1 id="r-markdown-documents">R Markdown documents</h1>
-<p>Start RStudio and create a new R Markdown file by doing <code>File -&gt; New File -&gt; R Markdown ...</code> with the default option for output format (HTML). Give the text <code>COVID19 Analysis</code> as title. You will get a sample R Markdown file, save it under the name <code>index.Rmd</code> in the <code>practical10</code> directory you previously created, by using the menu option <code>File -&gt; Save</code>. <a href="https://funcompbio.github.io/seminar4/#13">Set the working directory</a> to the <code>practical10</code> directory where you have saved this R Markdown document under the name <code>index.Rmd</code>.</p>
+<p>Start RStudio and create a new R Markdown file by doing <code>File -&gt; New File -&gt; R Markdown ...</code> with the default option for output format (HTML). Give the text <code>COVID19 Analysis</code> as title. You will get a sample R Markdown file, save it under the name <code>index.Rmd</code> in the <code>practical10</code> directory you previously created, by using the menu option <code>File -&gt; Save</code>. <a href="https://funcompbio.github.io/seminar4/#12">Set the working directory</a> to the <code>practical10</code> directory where you have saved this R Markdown document under the name <code>index.Rmd</code>.</p>
 <p>Now, we are going to process the <code>index.Rmd</code> file to obtain its corresponding HTML output (<code>index.html</code>) by pressing the <code>knit</code> button on top of the source code panel (see image below with a red arrow pointing to that button).</p>
 <p><img src="rstudioknitbutton.png" /></p>
 <p>After processing the file, a popup window should appear displaying the HTML page of the R Markdown file.</p>
@@ -24,6 +24,7 @@
 <p>where <strong>you should replace</strong> <code>filename.Rmd</code> by the filename of the R Markdown document your are working on. The previous instruction assumes you have <a href="https://funcompbio.github.io/seminar4/#13">set the working directory</a> of RStudio to the directory where the R Markdown file is located.</p>
 <p>Likewise, you can process the R Markdown document from the Unix shell command line with the following instruction:</p>
 <pre><code>$ Rscript -e &quot;rmarkdown::render(&#39;filename.Rmd&#39;)&quot;</code></pre>
+<p>This is relevant if you want to <em>automatize</em> your analysis pipeline using a <a href="https://funcompbio.github.io/lecture10/#5">Makefile</a>.</p>
 <h1 id="r-markdown-websites">R Markdown websites</h1>
 <p>The <a href="https://rmarkdown.rstudio.com/docs">rmarkdown package</a> provides the possibility of building what the authors of that package call <em>Markdown websites</em>, which is web page displaying the contents of two or more R Markdown documents. To see how it works you need to follow the next steps:</p>
 <ol type="1">
@@ -47,11 +48,11 @@ navbar:
       href: about.html
 output:
   html_document:</code></pre></li>
-<li><p>Having the <a href="https://funcompbio.github.io/seminar4/#13">working directory</a> of RStudio pointing to the directory were you stored the previous files, type the following instruction in the R shell:</p>
+<li><p>Having the <a href="https://funcompbio.github.io/seminar4/#12">working directory</a> of RStudio pointing to the directory were you stored the previous files, type the following instruction in the R shell:</p>
 <pre><code>&gt; rmarkdown::render_site()</code></pre>
 <p><strong>alternatively</strong>, you can also create the website from the Unix shell command line by going into that directory and typing:</p>
 <pre><code>$ Rscript -e &quot;rmarkdown::render_site()&quot;</code></pre></li>
 <li><p>Open the file <code>docs/index.html</code> in your web browser and you should see your first <em>R Markdown website</em>.</p></li>
 </ol>
 <p>You may consult the help page of the function <code>render_site()</code> from the <a href="https://rmarkdown.rstudio.com/docs">rmarkdown package</a> for further details on available parameters and how it works. Essentially, it looks up for the files <code>_site.yml</code> and <code>index.Rmd</code>, and every other <code>.Rmd</code>, <code>.md</code> or <code>.html</code> file, and process them to put them together as a website in the directory <code>docs</code> (the name of this directory can be changed through the keyword <code>output_dir</code> in the <code>_site.yml</code> file, omitting this keyword will result in creating the website in a directory called <code>_site</code>).</p>
-<p><strong>Exercise</strong>: using the GitHub repo you created in <a href="/practical9#publish-your-website-with-github-pages">practical 9</a> by accepting the GitHub Classroom assignment called <em>Website assignment</em>, move your R Markdown documents and website to that repo and try to see it displayed through the GitHub Pages private URL from that GitHub repo. If you want to keep the contents you had in the <code>index.html</code> from that repo, rename that file to some other name.</p>
+<p><strong>Exercise</strong>: using the GitHub repo you created in <a href="/practical9#publish-your-website-with-github-pages">practical 9</a> by accepting the GitHub Classroom assignment called <em>Website assignment</em>, move your R Markdown documents and website to that repo and try to see it displayed through the GitHub Pages private URL from that GitHub repo. If you want to keep the contents you had in the <code>.html</code> and <code>.md</code> files from practical 9, rename them to some other names.</p>

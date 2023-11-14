@@ -24,7 +24,7 @@ Start RStudio and create a new R Markdown file by doing
 (HTML). Give the text `COVID19 Analysis` as title. You will get a sample R
 Markdown file, save it under the name `index.Rmd` in the `practical10` directory
 you previously created, by using the menu option `File -> Save`.
-[Set the working directory](https://funcompbio.github.io/seminar4/#13) to the
+[Set the working directory](https://funcompbio.github.io/seminar4/#12) to the
 `practical10` directory where you have saved this R Markdown document under the
 name `index.Rmd`.
 
@@ -82,6 +82,8 @@ line with the following instruction:
 ```
 $ Rscript -e "rmarkdown::render('filename.Rmd')"
 ```
+This is relevant if you want to _automatize_ your analysis pipeline using
+a [Makefile](https://funcompbio.github.io/lecture10/#5).
 
 # R Markdown websites
 
@@ -118,7 +120,7 @@ next steps:
    output:
      html_document:
    ```
-5. Having the [working directory](https://funcompbio.github.io/seminar4/#13)
+5. Having the [working directory](https://funcompbio.github.io/seminar4/#12)
    of RStudio pointing to the directory were you stored the previous files,
    type the following instruction in the R shell:
    ```
@@ -146,5 +148,5 @@ a directory called `_site`).
 by accepting the GitHub Classroom assignment called _Website assignment_,
 move your R Markdown documents and website to that repo and try to see it
 displayed through the GitHub Pages private URL from that GitHub repo. If
-you want to keep the contents you had in the `index.html` from that repo,
-rename that file to some other name.
+you want to keep the contents you had in the `.html` and `.md` files from
+practical 9, rename them to some other names.
