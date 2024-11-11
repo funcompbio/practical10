@@ -50,7 +50,7 @@ Alternatively, if your prefer, you may practice with R Markdown by starting
 with the analysis of the data of your FCB project, but put just some R code
 to allow you having time to do the rest of this practical.
 
-Slides 7 to 11 from the
+Slides 6 to 11 from the
 [lecture](https://funcompbio.github.io/lecture9/#7) about reproducibility
 contain a succint summary of R Markdown, but the internet is plenty of
 materials to learn it. In particular, the website
@@ -145,7 +145,7 @@ a directory called `_site`).
 
 **Exercise**: using the GitHub repo you created in
 [practical 9](/practical9#publish-your-website-with-github-pages)
-by accepting the GitHub Classroom assignment called _Website assignment_,
+by accepting the GitHub Classroom assignment called _My Website_,
 move your R Markdown documents and website to that repo and try to see it
 displayed through the GitHub Pages private URL from that GitHub repo. If
 you want to keep the contents you had in the `.html` and `.md` files from
