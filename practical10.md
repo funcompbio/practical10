@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Practical 10
-lastupdate: November 11th, 2024
+lastupdate: February 23rd, 2026
 permalink: /practical10/
 ---
 
