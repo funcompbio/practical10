@@ -21,12 +21,18 @@ in your system. Make a directory called `practical10` for this practical.
 
 Start RStudio and create a new R Markdown file by doing
 `File -> New File -> R Markdown ...` with the default option for output format
-(HTML). Give the text `COVID19 Analysis` as title. You will get a sample R
-Markdown file, save it under the name `index.Rmd` in the `practical10` directory
-you previously created, by using the menu option `File -> Save`.
-[Set the working directory](https://funcompbio.github.io/seminar4/#12) to the
-`practical10` directory where you have saved this R Markdown document under the
-name `index.Rmd`.
+(HTML). It is possible that the first time you do this, RStudio will ask you to
+install some packages, if that is the case, just click on the `Install` button
+and wait until the installation process finishes.
+
+A popup window will appear asking for a title, author and date, give the text
+`COVID19 Analysis` as title, and write your name as author. You will get a
+sample R Markdown file, **save it** under the name `index.Rmd` in the
+`practical10` directory you previously created, by using the menu option
+`File -> Save`.
+[**Set the working directory**](https://funcompbio.github.io/seminar4/#12) to
+the `practical10` directory, where you have saved this R Markdown document
+under the name `index.Rmd`.
 
 Now, we are going to process the `index.Rmd` file to obtain its corresponding
 HTML output (`index.html`) by pressing the `knit` button on top of the source
@@ -37,7 +43,6 @@ code panel (see image below with a red arrow pointing to that button).
 After processing the file, a popup window should appear displaying the HTML
 page of the R Markdown file.
 
-
 **Exercise:** Modify this `index.Rmd` file to contain some part of the analysis
 of the COVID19 data from [practical 8](/practical8/). The final R Markdown
 document should contain:
@@ -46,12 +51,14 @@ document should contain:
 2. At least one figure.
 3. At least one table with the numerical results.
 
+<!--
 Alternatively, if your prefer, you may practice with R Markdown by starting
 with the analysis of the data of your FCB project, but put just some R code
 to allow you having time to do the rest of this practical.
+-->
 
-Slides 6 to 11 from the
-[lecture](https://funcompbio.github.io/lecture9/#7) about reproducibility
+Slides 19 to 23 from the
+[lecture](https://funcompbio.github.io/lecture9/#19) about reproducibility
 contain a succint summary of R Markdown, but the internet is plenty of
 materials to learn it. In particular, the website
 [https://rmarkdown.rstudio.com](https://rmarkdown.rstudio.com) contains
@@ -73,7 +80,7 @@ the R shell by typing the following:
 ```
 where **you should replace** `filename.Rmd` by the filename of the R Markdown
 document your are working on. The previous instruction assumes you have
-[set the working directory](https://funcompbio.github.io/seminar4/#13)
+[set the working directory](https://funcompbio.github.io/seminar4/#12)
 of RStudio to the directory where the R Markdown file is located.
 
 Likewise, you can process the R Markdown document from the Unix shell command
@@ -149,4 +156,16 @@ by accepting the GitHub Classroom assignment called _My Website_,
 move your R Markdown documents and website to that repo and try to see it
 displayed through the GitHub Pages private URL from that GitHub repo. If
 you want to keep the contents you had in the `.html` and `.md` files from
-practical 9, rename them to some other names.
+practical 9, rename them to some other names. If you have created the R
+Markdown document with contents of the practical 8, it is likely that you
+have used the two datasets called `poblacio_municipis.csv` and
+`dosis_municipi.csv`. The latter is more than 100Mb large, which means that
+GitHub will not allow you to upload it to your GitHub repo when you attempt
+doing the `git push` command. To solve this problem, you can either remove that
+file from outside the local clone of the repo, or compress it by typing:
+
+```
+$ zip dosis_municipi.zip dosis_municipi.csv
+```
+Once you have sorted out this problem, you should be able to do the `git add`,
+`git commit` and `git push` commands without problems.
